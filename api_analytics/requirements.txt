@@ -1,8 +1,0 @@
-fastapi[standard]
-uvicorn
-sqlalchemy
-psycopg2-binary
-pydantic
-user-agents
-ua-parser
-pyyaml
