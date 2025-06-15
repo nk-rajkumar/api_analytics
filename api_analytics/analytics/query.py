@@ -15,15 +15,15 @@ def get_filters(
     filters = {}
 
     if request_id:
-        filters.update({analytics_api.request_id.name: request_id})
+        filters[analytics_api.request_id.name] = request_id
     if request_type:
-        filters.update({analytics_api.request_type.name: request_type.upper()})
+        filters[analytics_api.request_type.name] = request_type.upper()
     if ip_address:
-        filters.update({analytics_api.ip_address.name: ip_address})
+        filters[analytics_api.ip_address.name] = ip_address
     if os:
-        filters.update({analytics_api.os.name: os})
+        filters[analytics_api.os.name] = os
     if user_agent:
-        filters.update({analytics_api.user_agent.name: user_agent})
+        filters[analytics_api.user_agent.name] = user_agent
 
     query = db.query(analytics_api)
     query = query.filter_by(**filters)
