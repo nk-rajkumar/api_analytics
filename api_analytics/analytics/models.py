@@ -8,8 +8,8 @@ Base = declarative_base()
 class analytics_api(Base):
     __tablename__ = "apihits"
 
-    id = Column(Integer, primary_key=True, index=True)
-    request_id = Column(String, index=True)
+    id = Column(Integer, primary_key=True)
+    request_id = Column(String)
     request_type = Column(String)
     request_time = Column(DateTime, default=datetime.now)
     pay_load = Column(Text, nullable=True)
