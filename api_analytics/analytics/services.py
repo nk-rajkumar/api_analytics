@@ -1,11 +1,11 @@
 from fastapi import FastAPI, Depends
 from api_analytics.db import get_db
 from api_analytics.analytics.schemas import APIHitBase
-from api_analytics.analytics.middlesware import Session
+from sqlalchemy.orm import Session
 from api_analytics.analytics.query import get_filters
 from typing import List, Optional
 
-analytics = FastAPI(prefix="/analytics")
+analytics = FastAPI()
 
 
 @analytics.get("/list", response_model=List[APIHitBase])

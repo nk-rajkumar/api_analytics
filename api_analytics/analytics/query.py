@@ -26,6 +26,6 @@ def get_filters(
         filters[analytics_api.user_agent.name] = user_agent
 
     query = db.query(analytics_api)
-    query = query.filter_by(**filters)
+    queries = query.filter_by(**filters)
 
-    return query.all()
+    return queries.all()

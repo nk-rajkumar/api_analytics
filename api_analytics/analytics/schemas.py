@@ -4,6 +4,7 @@ from datetime import datetime
 
 
 class APIHitBase(BaseModel):
+    id: int
     request_id: str
     request_type: str
     request_time: datetime

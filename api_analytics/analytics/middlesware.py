@@ -33,15 +33,17 @@ async def update_analytics(request: Request):
     request_type = request.method
     request_time = datetime.now()
     ip_address, user_agent, os = extract_request_data(request)
-    pay_load = None
+    pay_load = "Null"
     content_type = request.headers.get("content-type", "unknown")
 
     if request.method in ["POST", "PUT"]:
         try:
             body_data = await request.body()
             pay_load = body_data.decode()
+            if not pay_load.strip():
+                pay_load = "Empty_body"
         except:
-            pay_load = None
+            pay_load = "Null"
         content_type = request.headers.get("content-type", "unknown")
 
     hit = analytics_api(

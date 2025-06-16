@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-product = FastAPI(prefix="/product")
+product = FastAPI()
 
 
 @product.get("/get-item")
@@ -19,5 +19,5 @@ def update_item():
 
 
 @product.delete("/delete-item")
-def update_item():
+def delete_item():
     return {"message": "DELETE tracked"}
